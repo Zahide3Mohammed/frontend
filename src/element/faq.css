@@ -64,14 +64,14 @@
 }
 
 .faq__question h4 {
-  font-size: 1rem;
-  font-weight: 500;
+  font-size: 1.1rem;
+  font-weight: 700;
   color: #0f172a;
 }
 
 .faq__question span {
   font-size: 1.4rem;
-  color: #0f172a;
+  color: black;
 }
 
 /* Answer */
@@ -87,8 +87,8 @@
 }
 
 .faq__answer p {
-  color: #475569;
-  line-height: 1.6;
+  color: rgb(168, 0, 0);
+  line-height: 1.6;font-weight: 500;
 }
 
 /* Responsive */

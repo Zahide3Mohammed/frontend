@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import Footer from '../element/footer'
 import '../element/header'
 import Header from '../element/header'
-import './inscription.css'
+import './signup.css'
 
 export default function SignUp(){
     return<>

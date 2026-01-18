@@ -3,6 +3,8 @@ import "./TermsJourney.css";
 import Header from "../element/header";
 import Footer from "../element/footer";
 import { Link } from "react-router-dom";
+import { useLanguage } from "../element/LanguageContext";
+import { translations } from "../element/translations";
 
 const termsSteps = [
   {
@@ -33,6 +35,8 @@ const termsSteps = [
 ];
 
 export default function TermsJourney({ onAccept }) {
+  const { language } = useLanguage();
+  const t = translations[language];
   const [step, setStep] = useState(0);
 
   const progress = ((step + 1) / termsSteps.length) * 100;
@@ -40,7 +44,7 @@ export default function TermsJourney({ onAccept }) {
   return (
     <>
     <Header></Header>
-    <div className="terms-container">
+    <div className={`terms-container  ${language === "ar" ? "text-right" : "text-left"}`}>
       <div className="progress-bar">
         <div className="progress" style={{ width: `${progress}%` }} />
       </div>

@@ -32,10 +32,10 @@
 }
 
 .canva-card p {
-  font-size: 17px;
-  line-height: 1.6;
-  max-width: 460px;
-  opacity: 0.95;
+  font-size: 17px;color: white;
+  line-height: 1.6;font-size: larger;
+  max-width: 100%;
+  opacity: 1;
 }
 
 /* Gradients */
@@ -75,16 +75,22 @@
 @media (max-width: 768px) {
   .canva-section {
     grid-template-columns: 1fr; /* stacked cards */
-    gap: 15px;
-    border: #0f766e 1px solid;
+    gap: 0px;
   }
 
   .canva-card {
-    grid-column: span 1;
-    padding: 30px;
+    grid-column: span 3;
+    padding: 30px;margin: 10px 0;
     min-height: auto;
   }
 
   .canva-card h2 { font-size: 24px; }
   .canva-card p { font-size: 15px; }
+
+  .canva-card:nth-child(1) { grid-column: span 3; } /* reverse */
+  .canva-card:nth-child(2) { grid-column: span 7; }
+  .canva-card:nth-child(3) { grid-column: span 7; }
+  .canva-card:nth-child(4) { grid-column: span 3; }
 }
+.text-left {text-align: left;direction: ltr; }
+.text-right { text-align: right;direction: rtl; }

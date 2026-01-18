@@ -1,19 +1,11 @@
-/* ===== GLOBAL ===== */
-
-
-
-
-/* ===== CONTAINER ===== */
 .container {
   display: flex;
-  flex-wrap: wrap; /* pour responsivité */
+  flex-wrap: wrap; 
   margin: 30px 50px;
   
   border-radius: 20px;
   overflow: hidden;
 }
-
-
 .left {
   flex: 1 1 50%;
   border-radius: 20px 0 0 20px;background: linear-gradient(135deg, #7c3aed, #ec4899);
@@ -25,8 +17,6 @@
   margin: 0;
   font-size: 32px;
 }
-
-
 .right {
   flex: 1 1 50%;
   background: white;
@@ -36,7 +26,6 @@
   border-radius: 0 20px 20px 0;
   color: #6366f1;
 }
-
 .form {
   width: 100%;
   max-width: 390px;
@@ -47,13 +36,11 @@
   text-align: center;
   font-size: xx-large;
 }
-
 .subtitle {
   font-size: 14px;
   color: #9ca3af;
   margin-bottom: 20px;
 }
-
 input {
   width: 100%;
   padding: 12px;
@@ -63,16 +50,13 @@ input {
   background: #bbcff1;
   color: #1e293b; /* meilleur contraste */
 }
-
 input::placeholder {
   color: #1e293b;
 }
-
 .row {
   display: flex;
   gap: 10px;
 }
-
 .btn {
   width: 100%;
   padding: 12px;

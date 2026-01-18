@@ -16,7 +16,7 @@ export default function Header() {
         {/* Actions */}
         <div className="header__actions">
           <LanguageSelect></LanguageSelect>
-          <Link to="/login" className="btn--ghost">{t.Login}</Link>
+          <Link to="/sign-in" className="btn--ghost">{t.Login}</Link>
           <Link to="/sign-up" className="btn--primary">{t.signup}</Link>
         </div>
       </div>
