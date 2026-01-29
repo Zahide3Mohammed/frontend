@@ -5,7 +5,8 @@ export const translations = {
     signup: "Sign up",
     faq: "Frequently Asked Questions",
     start:"Start Now",
-    tarhib:"Make new friends, discover exciting programs, and enjoy exploring Morocco.",
+    tarhib1:"One platform. One identity",
+    tarhib2:"Where every profile tells a story."
     
 
   },
@@ -15,7 +16,8 @@ export const translations = {
     signup: "Inscription",
     faq: "Questions fréquentes",
     start:"Commencez maintenant",
-    tarhib:"Faites de nouvelles rencontres, découvrez des programmes captivants et vivez une expérience touristique au Maroc.",
+    tarhib1:"Une plateforme. Une identité.",
+    tarhib2:"Là où chaque profil raconte une histoire.",
     card3:"Devenir une référence dans le domaine numérique en fournissant à nos clients et partenaires des produits innovants, fiables et à forte valeur ajoutée.",
     card3t:"Notre ambition",
     card4:"Un avenir axé sur le développement continu, l'adaptation aux nouvelles technologies et un impact positif sur la société numérique.",
@@ -31,8 +33,9 @@ export const translations = {
     Login: "تسجيل الدخول",
     signup: "إنشاء حساب",
     faq: "الأسئلة الشائعة",
-    start:"ابذا الان",
-    tarhib:"كوّن صداقات جديدة، اكتشف برامج ممتعة، وعِش تجربة السياحة في المغرب.",
+    start:" ابدأ الآن",
+    tarhib1:"منصة واحدة. هوية واحدة",
+    tarhib2:"حيث  كل ملف شخصي يحكي قصة.",
     card4:"مستقبل يركز على التطور المستمر، والتكيف مع التقنيات الجديدة، والتأثير الإيجابي على المجتمع الرقمي.",
     card4t:"مستقبلنا",
     card3:"أن نصبح مرجعاً في المجال الرقمي من خلال تقديم منتجات مبتكرة وموثوقة وذات قيمة مضافة عالية لعملائنا وشركائنا.",

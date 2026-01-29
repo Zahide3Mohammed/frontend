@@ -1,7 +1,7 @@
 import { useState } from "react";
-import "./TermsJourney.css";
-import Header from "../element/header";
-import Footer from "../element/footer";
+import "./TermsJourney.Module.css";
+import Header from "../element/header.jsx";
+import Footer from "../element/footer.jsx";
 import { Link } from "react-router-dom";
 import { useLanguage } from "../element/LanguageContext";
 import { translations } from "../element/translations";

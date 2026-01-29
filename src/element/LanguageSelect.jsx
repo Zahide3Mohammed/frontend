@@ -1,4 +1,4 @@
-import { useLanguage } from "./LanguageContext";
+import { useLanguage } from "./LanguageContext.jsx";
 import "./language-select.css";
 
 export default function LanguageSelect() {

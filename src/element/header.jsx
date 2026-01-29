@@ -1,25 +1,40 @@
-import { Link } from "react-router-dom";
-import "./header-style.css";
-import { useLanguage } from "./LanguageContext";
-import { translations } from "./translations";
-import LanguageSelect from "./LanguageSelect";
+import React, { useState, useEffect } from 'react';
+import './header-style.Module.css';
 
 export default function Header() {
-  const { language } = useLanguage();
-  const t = translations[language];
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <header className="header">
-      <div className="header__container">
-        {/* Logo */}
-          <span className="Logo">
-              <Link to="/"><img src="images/logo.png" alt="" /> </Link></span>
-        {/* Actions */}
-        <div className="header__actions">
-          <LanguageSelect></LanguageSelect>
-          <Link to="/sign-in" className="btn--ghost">{t.Login}</Link>
-          <Link to="/sign-up" className="btn--primary">{t.signup}</Link>
+    <div className="header-wrapper">
+      <header className={`floating-header ${isScrolled ? 'scrolled' : ''}`}>
+        <div className="header-container">
+          
+          {/* Logo - Right Side (RTL) */}
+          <div className="header-logo">
+            <a href="/">PRO<span>JECT</span></a>
+          </div>
+
+          {/* Actions - Left Side */}
+          <div className="header-actions">
+            <a href="#contact" className="contact-link">اتصل بنا</a>
+            <button className="btn-primary-pro">ابدأ التجربة</button>
+            
+            <div className="burger-menu">
+              <div className="line"></div>
+              <div className="line short"></div>
+            </div>
+          </div>
+
         </div>
-      </div>
-    </header>
+      </header>
+    </div>
   );
 }

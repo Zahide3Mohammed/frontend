@@ -1,4 +1,4 @@
-import "./Cards.css";
+import "./Cards.Module.css";
 import { useLanguage } from "./LanguageContext";
 import { translations } from "./translations";
 
