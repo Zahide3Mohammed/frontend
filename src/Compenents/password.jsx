@@ -26,10 +26,12 @@ export default function Password() {
       <div className="right-form">
         <h2>Formulaire</h2>
         <form>
-          <input type="text" placeholder="Nom" />
-          <input type="email" placeholder="Email" />
-          <input type="tel" placeholder="Téléphone" />
-          <Link to="/Questions"><button type="submit">Envoyer</button></Link>
+          Password :
+          <input type="text" placeholder="Password" />
+          Repeat Password :
+          <input type="text" placeholder="Repeat Password" />
+          <button type="submit">Envoyer</button>
+          <Link to="/Questions">page suivante</Link>
         </form>
       </div>
     </div>

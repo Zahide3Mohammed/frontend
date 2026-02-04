@@ -2,11 +2,15 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import './logup.css';
+import { translations } from '../element/translations';
+import { useLanguage } from '../element/LanguageContext';
 
 const images = ["/images/chta.png"];
 
+
 export default function AuthPage() {
-    // 1. State dyal Switch
+const { language } = useLanguage();
+const t = translations[language];
     const [isSignUp, setIsSignUp] = useState(true);
 
     // 2. States dyal Sign Up (kima sifthom)
@@ -36,6 +40,7 @@ export default function AuthPage() {
         if (errors[e.target.name]) {
             setErrors({ ...errors, [e.target.name]: '' });
         }
+        
     };
 
     const validate = () => {
@@ -64,6 +69,7 @@ export default function AuthPage() {
             setLoading(false);
         }
     };
+    
 
     // --- LOGIC SIGN IN ---
     const handleLogin = (e) => {
@@ -96,8 +102,9 @@ const handleChangeSignIn = (e) => {
                     ))}
                     <div className="dark-overlay"></div>
                     <div className="hero-text">
-                        <h1>{isSignUp ? "Welcome to the Future." : "Welcome Back!"}</h1>
-                        <p>{isSignUp ? "Build your professional profile in seconds." : "Connect to manage your profile."}</p>
+                        
+                        <h1>{isSignUp ? `${t.loginlisr1}` : `${t.loginlisr2}`}</h1>
+                        <p>{isSignUp ? `${t.loginlisr3}` : `${t.loginlisr4}`}</p>
                     </div>
                 </div>
             </div>
@@ -108,8 +115,10 @@ const handleChangeSignIn = (e) => {
                     /* --- EXACT SIGNUP FORM DYALK --- */
                     <form className="form-container" onSubmit={handleSubmit} noValidate>
                         <div className="form-header">
-                            <h2>Create an account</h2>
-                            <p>Enter your details to get started.</p>
+                            <h2 className={`${language === "ar" ? "text-right" : "text-left"}`}>
+                            {t.loguplimn1}</h2>
+                            <p className={`${language === "ar" ? "text-right" : "text-left"}`}>
+                                {t.loguplimn2}</p>
                         </div>
 
                         <div className="row">
@@ -165,7 +174,7 @@ const handleChangeSignIn = (e) => {
                         </button></Link>
                         <div className="toggle-auth">
                                 <span>Already have an account? </span>
-                                <Link to="/password" ><button type="button" className="link-btn" onClick={() => setIsSignUp(false)}>Sign In</button></Link>
+                                <button type="button" className="link-btn" onClick={() => setIsSignUp(false)}>Sign In</button>
                             </div>
                     </form>
                 ) : (
@@ -181,7 +190,7 @@ const handleChangeSignIn = (e) => {
                 <div className="input-group-modern">
                     <label>Email Address</label>
                     <div className="input-wrapper">
-                        <span className="icon">📧</span>
+                        
                         <input 
                             type="email" 
                             name="email" 
@@ -199,7 +208,7 @@ const handleChangeSignIn = (e) => {
                     <Link to="/forgot" className="forgot-link">Forgot password?</Link>
                 </div>
                 <div className="input-wrapper">
-                    <span className="icon">🔒</span>
+                    
                     <input 
                         type={showPassword ? "text" : "password"} 
                         name="password" 

@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="footer-grid">
           
           <div className="footer-brand">
-            <h2 className="footer-logo">PRO<span>JECT</span></h2>
+            <h2 className="footer-logo">Halla<span>Maghreb</span></h2>
             <p className="footer-desc">
               أفضل المنصات لتنظيم نشاطاتك اليومية واكتشاف تجارب جديدة في مدينتك. انضم إلينا اليوم!
             </p>
@@ -41,7 +41,7 @@ export default function Footer() {
 
         </div>
         <div className="footer-bottom">
-          <p>© 2026 جميع الحقوق محفوظة. تم تطويره بكل ❤️</p>
+          <p>© 2026 جميع الحقوق محفوظة. تم تطويره بكل </p>
         </div>
       </div>
     </footer>

@@ -2,26 +2,19 @@ import React, { useState, useEffect } from 'react';
 import './Hero.Module.css';
 import { Link } from 'react-router-dom';
 
+
 export default function PremiumHome() {
   const [currentSlide, setCurrentSlide] = useState(0);
-
-  // صور الخلفية الكبيرة اللي كتبدل في الـ Hero
    const bgSlides = [
     "/images/img1.png", 
     "/images/img2.jpg",
-    "/images/img3.png"
+    "/images/img3.png",
+    "/images/img4.jpg",
+    "/images/img5.png",
+    "/images/img6.jpg",
+    "/images/img7.png",
   ];
 
-  const activities = [
-    { id: 1, title: 'Sports ', tag: 'رياضة', img: '/images/football.png', size: 'large' },
-    { id: 2, title: 'رحلة لأكادير', tag: 'سفر', img: '/images/agadir.png', size: 'small' },
-    { id: 3, title: 'ليلة القهوة', tag: 'اجتماعي', img: '/images/coffee.jpg', size: 'medium' },
-    { id: 4, title: 'Gaming Night', tag: 'ترفيه', img: '/images/gaming.jpg', size: 'small' },
-    { id: 5, title: 'هايكينغ إيمليل', tag: 'مغامرة', img: '/images/hiking.jpg', size: 'medium' },
-    { id: 6, title: 'وركشوب تصوير', tag: 'فن', img: '/images/photo.jpg', size: 'small' },
-  ];
-
-  // منطق تغيير خلفية الـ Hero تلقائياً
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev === bgSlides.length - 1 ? 0 : prev + 1));
@@ -71,37 +64,42 @@ export default function PremiumHome() {
           ))}
           <div className="hero-overlay-dark"></div>
         </div>
-
-        <div className="hero-content-inner">
-          <div className="hero-info">
-            <span className="badge">أكبر مجتمع في المغرب</span>
-            <h1>مئات النشاطات <br/> <span className="text-gradient">كتسناك كل نهار</span></h1>
-            <p>انضم لآلاف الشباب المغربي اللي كيعيشوا تجارب جديدة يومياً.</p>
-            <div className="hero-btns">
-              <Link to="/login" className="btn-main">اكتشف كولشي</Link>
-              <button className="btn-video">كيفاش خدامين؟ <span>▶</span></button>
-            </div>
-          </div>
-
-          <div className="activity-wall">
-            {activities.map((act) => (
-              <div key={act.id} className={`activity-card ${act.size}`}>
-                {/* خلفية كل نشاط */}
-                <div className="card-bg" style={{ backgroundImage: `url(${act.img})` }}></div>
+          <section className="hero-split-asymmetric">
+              <div className="hero-container">
                 
-                <div className="card-overlay">
-                  <span className="card-tag">{act.tag}</span>
-                  <h3>{act.title}</h3>
-                  <button className="join-btn">انضم</button>
+                {/* الجهة اليمنى: العنوان الكبير فقط */}
+                <div className="hero-title-side">
+      <h1 className="hero-main-title">مئات النشاطات  <br /><span className="glow-text"> تنتظرك كل يوم </span> 
+      </h1>
                 </div>
+
+                {/* الجهة اليسرى: الوصف، الزر، والإحصائيات */}
+                <div className="hero-info-side">
+                  <p className="hero-description">
+                    تجاوز الاختبارات التقليدية. ابدأ رحلة غوص في أعماق ذاتك مع أدق اختبار شخصية مجاني لعام 2026. تحليل دقيق مبني على أسس علمية.
+                  </p>
+                  
+                  <div className="hero-actions">
+                    <Link to="/login" className="cta-primary">ابدأ رحلتك الآن</Link>
+                    
+                    <div className="user-proof">
+                      <div className="avatar-stack">
+                        <img src="https://i.pravatar.cc/100?u=4" alt="user" />
+                        <img src="https://i.pravatar.cc/100?u=5" alt="user" />
+                        <img src="https://i.pravatar.cc/100?u=6" alt="user" />
+                      </div>
+                      <span className="user-count-text">انضم لـ +50,000 مستخدم</span>
+                    </div>
+                  </div>
+                </div>
+
               </div>
-            ))}
-          </div>
-        </div>
-        <svg className="wave" viewBox="0 0 1440 120"  preserveAspectRatio="none">
-    <path d="M0,60 C120,100 240,20 360,40 C480,60 600,100 720,80 C840,60 960,20 1080,40 C1200,60 1320,100 1440,80 L1440,120 L0,120 Z" fill="white"/>
-</svg>
+            </section>
+            <svg className="wave" viewBox="0 0 1440 120"  preserveAspectRatio="none">
+              <path d="M0,60 C120,100 240,20 360,40 C480,60 600,100 720,80 C840,60 960,20 1080,40 C1200,60 1320,100 1440,80 L1440,120 L0,120 Z" fill="white"/>
+            </svg>
       </section>
+      
     </div>
     </>
   );

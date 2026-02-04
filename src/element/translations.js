@@ -1,5 +1,11 @@
 export const translations = {
   en: {
+    loginlisr1 :"Welcome to the futur .",
+    loginlisr2:"Welcome Back.",
+    loginlisr3 :"Build your professional profile in seconds.",
+    loginlisr4:"Connect to manage your profile.",
+    loguplimn1:"Create an account",
+    loguplimn2:"Enter your details to get started.",
     home: "Home",
     Login: "Login",
     signup: "Sign up",
@@ -11,6 +17,10 @@ export const translations = {
 
   },
   fr: {
+    loginlisr1 :"Bienvenue dans le futur",
+    loginlisr2:"Content de te revoir.",
+    loginlisr3 :"Créez votre profil professionnel en quelques secondes.",
+    loginlisr4:"Connectez-vous pour gérer votre profil.",
     home: "Accueil",
     Login: "Connexion",
     signup: "Inscription",
@@ -29,6 +39,12 @@ export const translations = {
 
   },
   ar: {
+    loginlisr1 :"أهلاً بكم في المستقبل",
+    loginlisr2:"سعدت برؤيتك مجدداً",
+    loginlisr3 :"أنشئ ملفك الشخصي الاحترافي في بضع ثوانٍ",
+    loginlisr4:"قم بتسجيل الدخول لإدارة ملفك الشخصي",
+    loguplimn1:"إنشاء حساب",
+    loguplimn2:"أدخل بياناتك للبدء.",
     home: "الرئيسية",
     Login: "تسجيل الدخول",
     signup: "إنشاء حساب",

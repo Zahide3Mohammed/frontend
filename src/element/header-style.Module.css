@@ -1,7 +1,7 @@
-/* Wrapper bach i-ched blasto (Space reservation) */
+
 .header-wrapper {
   width: 100%;height: max-content;
-  background: #0a0a0b; /* Nefs lon l-footer */
+  background: #0a0a0b; 
   position: sticky;
   top: 0;
   z-index: 2000;
@@ -9,23 +9,17 @@
 
 .floating-header {
   width: 100%;
-  padding: 25px 0;
+  padding: 12px 0;
   transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
-  direction: rtl;
   border-bottom: 1px solid rgba(255, 255, 255, 0.03);
 }
-
-/* Fach kaddir scroll: kity-transforma l-jazeera (Island) */
 .floating-header.scrolled {
-  margin-top: 15px;
-  width: 95%; /* kiy-sgharn f'l-3rd */
+  width: 96%;
   margin-left: auto;
   margin-right: auto;
   padding: 12px 25px;
-  background: rgba(15, 15, 18, 0.7); /* Lon ghamq chwiya */
+  background: rgba(15, 15, 18, 0.7); 
   backdrop-filter: blur(20px) saturate(160%);
-  border-radius: 12px; /* Capsule shape */
-  border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 

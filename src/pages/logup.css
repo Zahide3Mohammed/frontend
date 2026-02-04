@@ -4,18 +4,18 @@
 }
 
 .link-btn {
-    background-color: #007bff ;
+    background-color: #ff4757 ;
     border: none;
     color: #fff;
     text-decoration: underline;
     cursor: pointer;
     font-weight: bold;
-    padding: 0;text-decoration: none; border: 0px solid #0056b3;
+    padding: 0;text-decoration: none; border: 0px solid #ff4757;
     margin-left: 5px;padding: 7px;
 }
 
 .link-btn:hover {
-    background-color: #0056b3;
+    background-color: #cd0415;
 }
 .app-layout {
     display: flex;height: 100%;
@@ -38,10 +38,10 @@
 
 .led-border {
     position: absolute;
-    width: 120%; height: 170%;
-    background: conic-gradient(from 0deg, transparent 0%, #c800ff 25%,#00f2ff 50%, #ff0000 75%, #00ef60 100%);
+    width: 160%; height: 130%;
+    background: conic-gradient(from 0deg, white 0%, red 25%,#ff4757 50%, #d68100 75%, #7300ef 100%);
     animation: rotateLED 8s linear infinite;
-    filter: blur(20px);
+    filter: blur(17px);
 }
 
 @keyframes rotateLED { to { transform: rotate(360deg); } }
@@ -51,7 +51,7 @@
 .slider-content {
     position: absolute;
     inset: 4px;
-    background: #05071a;
+    background: black;
     clip-path: inherit;
     display: flex;
     align-items: center;
@@ -71,7 +71,10 @@
     position: relative; z-index: 10; color: white; text-align: center; padding: 40px;
 }
 
-.hero-text h1 { font-size: 3rem; margin-bottom: 10px; text-shadow: 0 0 15px #00f2ff; }
+.hero-text h1 { font-size: 3rem; margin-bottom: 10px; text-shadow: 0 0 15px #ff4757; }
+.hero-text p{
+    color: #ffaeb5;font-size: 1.3rem;font-weight: 900;
+}
 
 /* --- Right Side: Form --- */
 .form-side {
@@ -88,23 +91,24 @@
 }
 
 .form-header { margin-bottom: 30px; }
-.form-header h2 { font-size: 2.2rem; color: #3b49df; margin-bottom: 5px; }
-.form-header p { color: #666; font-size: 0.9rem; }
+.form-header h2 { font-size: 2.2rem; color: #ff4757; margin-bottom: 5px; }
+.form-header h2{direction: ltr;}
+.form-header p { color: #403e3e; font-size: 0.9rem; }
 
-.row, .input-row { display: flex; gap: 15px; margin-bottom: 15px; }
+.row, .input-row { display: flex; gap: 10px; margin-bottom: 15px; }
 .input-group { flex: 1; }
 
 input:not([type="radio"]):not([type="checkbox"]) {
     width: 100%;
     padding: 12px 15px;
-    border: 1.5px solid #eee;
+    border: 1.5px solid #9f9f9f;
     border-radius: 8px;
-    background: #fdfdfd;
+    background: hsl(354, 100%, 96%);
     transition: 0.3s;
 }
 
 input:focus {
-    border-color: #3b49df;
+    border-color: #ff4757;
     box-shadow: 0 0 8px rgba(59, 73, 223, 0.1);
     outline: none;
 }
@@ -125,16 +129,16 @@ input:focus {
 .img-preview img { width: 100%; height: 100%; object-fit: cover; }
 
 .file-label-modern {
-    display: block; padding: 12px; border: 2px dashed #3b49df;
+    display: block; padding: 12px; border: 2px dashed #ff4757;
     text-align: center; border-radius: 8px; cursor: pointer;
-    color: #3b49df; font-weight: bold; transition: 0.3s;
+    color: #ff4757; font-weight: bold; transition: 0.3s;
 }
 .file-label-modern:hover { background: #f0f2ff; }
 
 /* --- Checkbox & Submit --- */
 .terms-row { margin: 20px 0; font-size: 0.85rem; }
 .submit-botona {
-    width: 100%; padding: 15px; background: #3b49df; color: white;
+    width: 100%; padding: 15px; background: #ff4757; color: white;
     border: none; border-radius: 8px; font-weight: bold; font-size: 1rem;
     cursor: pointer; transition: 0.4s; box-shadow: 0 4px 15px rgba(59, 73, 223, 0.3);
 }
@@ -181,7 +185,6 @@ input:focus {
         max-width: 100%;
     }
 
-    /* L-inputs li kano f-nefs l-khet (Nom/Prenom) i-welliw waħed taħt waħed */
     .row, .input-row {
         flex-direction: column;
         gap: 0;
@@ -195,7 +198,7 @@ input:focus {
 /* --- SMALL PHONES (Max 480px) --- */
 @media (max-width: 480px) {
     .slider-side {
-        height: 220px; /* Sgher kter f-tillafoat sghar */
+        height: 220px; 
     }
 
     .hero-text h1 {
@@ -215,24 +218,24 @@ input:focus {
         font-size: 0.9rem;
     }
 }
-/* Layout Settings */
+
 .page-wrapper {
     display: flex;
     flex-direction: column;
-    height: 100vh; /* Kayched l-ecran kamla */
-    overflow: hidden; /* Bach l-header yb9a fixed l-fo9 */
+    height: 100vh; 
+    overflow: hidden; 
 }
 
 .main-content {
-    flex: 1; /* Kayched ga3 l-espace li b9a taht l-header */
+    flex: 1; 
     display: flex;
-    overflow-y: auto; /* Ila kant l-form twila, l-body hoa li kay-scroll */
+    overflow-y: auto; 
 }
 
 .app-layout {
     display: flex;
     width: 100%;
-    min-height: 100%; /* Bach dima t-filler l-espace */
+    min-height: 100%;
 }
 
 /* Slider side styling */
@@ -240,7 +243,7 @@ input:focus {
     position: relative;
     flex: 1;
     background: #000;
-    display: none; /* Hidden on mobile */
+    display: none; 
 }
 
 @media (min-width: 992px) {
@@ -260,7 +263,7 @@ input:focus {
 .submit-botona {
     width: 100%;
     padding: 12px;
-    background-color: #007bff;
+    background-color: #ff4757;
     color: white;
     border: none;
     border-radius: 5px;
@@ -366,3 +369,5 @@ input:focus {
     color: #6366f1;
     text-decoration: none;
 }
+.text-left {text-align: left;direction: ltr; }
+.text-right { text-align: right;direction: rtl; }
