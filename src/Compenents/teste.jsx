@@ -1,93 +1,76 @@
-import React, { useState, useEffect } from 'react';
-import './teste.Module.css';
+import { useState } from "react";
+import "./teste.Module.css";
 
-export default function HallaMaghreb() {
-  const [current, setCurrent] = useState(0);
-  const images = [
-    "images/img1.png",
-  ];
+const questions = [
+  { id: 1, text: "I feel energized when I interact with new people." },
+  { id: 2, text: "I trust logic more than emotions when making decisions." },
+  { id: 3, text: "I prefer planning over spontaneity." },
+  { id: 4, text: "I enjoy spending time alone to recharge." },
+  { id: 5, text: "I adapt quickly to unexpected situations." },
+];
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrent((prev) => (prev === images.length - 1 ? 0 : prev + 1));
-    }, 5000);
-    return () => clearInterval(timer);
-  }, []);
+const scale = [-3, -2, -1, 0, 1, 2, 3];
+
+export default function MindFlowTest() {
+  const [index, setIndex] = useState(0);
+  const [answers, setAnswers] = useState({});
+
+  const current = questions[index];
+  const progress = ((index + 1) / questions.length) * 100;
+
+  const selectValue = (value) => {
+    setAnswers({ ...answers, [current.id]: value });
+  };
+
+  const next = () => {
+    if (answers[current.id] === undefined) return;
+    if (index < questions.length - 1) {
+      setIndex(index + 1);
+    } else {
+      console.log("Results:", answers);
+      alert("Test completed ✨");
+    }
+  };
 
   return (
-    <div className="halla-wrapper">
-      <div className="marquee">
-                <div className="marquee-track">
-                    <span>Hello</span>
-                    <span>Bonjour</span>
-                    <span>Hola</span>
-                    <span>مرحبا</span>
-                    <span>ⴰⵣⵓⵍ</span>
-                    <span>Olá</span>
-                    <span>नमस्ते</span>
-                    <span>你好</span>
-                    <span>Ciao</span>
-                    <span>Merhaba</span>
-                    <span>Hei</span>
-                    <span>Hej</span>
-                    <span>Hello</span>
-                    <span>Bonjour</span>
-                    <span>Hola</span>
-                    <span>مرحبا</span>
-                    <span>ⴰⵣⵓⵍ</span>
-                    <span>Olá</span>
-                    <span>नमस्ते</span>
-                    <span>你好</span>
-                    <span>Ciao</span>
-                    <span>Merhaba</span>
-                    <span>Hei</span>
-                    <span>Hej</span>
-                </div>
-            </div>
-      {/* الخلفية: صور كاتباع بهدوء */}
-      <div className="bg-container">
-        {images.map((img, i) => (
-          <div 
-            key={i} 
-            className={`bg-img ${i === current ? 'active' : ''}`} 
-            style={{ backgroundImage: `url(${img})` }}
-          />
-        ))}
-        <div className="dark-overlay"></div>
-      </div>
-
-      {/* المنيو العلوي */}
-      <nav className="top-nav">
-        <div className="logo">HALLA<span>MAGHREB</span></div>
-        <button className="join-btn">JOIN THE CIRCLE</button>
-      </nav>
-
-      {/* المحتوى الرئيسي */}
-      <main className="main-content">
-        <div className="text-section">
-          <p className="subtitle">MOROCCO'S PREMIER DESTINATION</p>
-          <h1 className="main-title">Heritage <br/><span>Reimagined.</span></h1>
+    <div className="mindflow-wrapper">
+      <div className="mindflow-card">
+        <div className="progress">
+          <div className="progress-fill" style={{ width: `${progress}%` }} />
         </div>
 
-        <div className="card-section">
-          <div className="glass-card">
-            <span className="live-tag">LIVE NOW</span>
-            <h3>Cultural Exchange</h3>
-            <p>Join our global community in a unique journey through Moroccan hospitality.</p>
-            <button className="explore-btn">EXPLORE →</button>
-          </div>
-        </div>
-      </main>
+        <span className="step">
+          Question {index + 1} / {questions.length}
+        </span>
 
-      {/* مؤشر الصور الأسفل */}
-      <div className="indicators">
-        {images.map((_, i) => (
-          <div key={i} className={`line ${i === current ? 'active' : ''}`} />
-        ))}
+        <h2 className="question">{current.text}</h2>
+
+        <div className="scale-labels">
+          <span>Disagree</span>
+          <span>Agree</span>
+        </div>
+
+        <div className="scale-buttons">
+          {scale.map((val) => (
+            <button
+              key={val}
+              onClick={() => selectValue(val)}
+              className={`scale-btn size-${Math.abs(val)}
+                ${answers[current.id] === val ? "active" : ""}`}
+            >
+              {val > 0 ? `+${val}` : val}
+            </button>
+          ))}
+        </div>
+
+        <button
+          className="next-btn"
+          onClick={next}
+          disabled={answers[current.id] === undefined}
+        >
+          {index === questions.length - 1 ? "Finish Test" : "Next"}
+        </button>
       </div>
-      <svg className="wave" viewBox="0 0 1440 120"  preserveAspectRatio="none">
-    <path d="M0,60 C120,100 240,20 360,40 C480,60 600,100 720,80 C840,60 960,20 1080,40 C1200,60 1320,100 1440,80 L1440,120 L0,120 Z" fill="white"/>
-</svg>
     </div>
   );
 }

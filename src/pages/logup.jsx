@@ -11,7 +11,7 @@ const images = ["/images/chta.png"];
 export default function AuthPage() {
 const { language } = useLanguage();
 const t = translations[language];
-    const [isSignUp, setIsSignUp] = useState(true);
+    const [step, setStep] = useState(1);
 
     // 2. States dyal Sign Up (kima sifthom)
     const [formData, setFormData] = useState({
@@ -103,15 +103,15 @@ const handleChangeSignIn = (e) => {
                     <div className="dark-overlay"></div>
                     <div className="hero-text">
                         
-                        <h1>{isSignUp ? `${t.loginlisr1}` : `${t.loginlisr2}`}</h1>
-                        <p>{isSignUp ? `${t.loginlisr3}` : `${t.loginlisr4}`}</p>
+                        <h1>{step==1 ? `${t.loginlisr1}` :  step===3 ? `${t.loginlisr2}` : `${t.loginlisr5}` }</h1>
+                        <p>{step==1 ? `${t.loginlisr3}` :  step===3 ? `${t.loginlisr4}` : `${t.loginlisr6}` }</p>
                     </div>
                 </div>
             </div>
 
             {/* --- RIGHT SIDE: DYNAMIC FORM --- */}
             <div className="form-side">
-                {isSignUp ? (
+                {step===1 && (
                     /* --- EXACT SIGNUP FORM DYALK --- */
                     <form className="form-container" onSubmit={handleSubmit} noValidate>
                         <div className="form-header">
@@ -160,112 +160,129 @@ const handleChangeSignIn = (e) => {
                             <input id="photo" type="file" hidden onChange={(e) => setPhoto(e.target.files[0])} />
                             {errors.photo && <span className="error-msg">{errors.photo}</span>}
                         </div>
-
-                        <div className="terms-row">
-                            <label className="checkbox-container">
-                                <input type="checkbox" required />
-                                <span className="checkmark"></span>
-                                I agree with <Link to="/terms">Terms & Conditions</Link>
-                            </label>
-                        </div>
-
-                        <Link to="/password" ><button className="submit-botona" type="submit" disabled={loading}>
-                            {loading ? <div className="spinner"></div> : 'Create Account'}
-                        </button></Link>
+                        <Link to="/password" className="submit-botona" >Suivant</Link>
                         <div className="toggle-auth">
                                 <span>Already have an account? </span>
-                                <button type="button" className="link-btn" onClick={() => setIsSignUp(false)}>Sign In</button>
+                                <button type="submit" className="link-btn" onClick={() => setStep(3)}>Sign In</button>
                             </div>
                     </form>
-                ) : (
-        /* --- SIGNIN FORM (MODERN STYLE) --- */
-        <div className="form-container signin-mode">
-            <div className="form-header">
-                <h2>Welcome Back!</h2>
-                <p>Glad to see you again. Please log in to your account.</p>
-            </div>
-
-            <form onSubmit={handleLogin} className="modern-form">
-                {/* Email Input */}
-                <div className="input-group-modern">
-                    <label>Email Address</label>
-                    <div className="input-wrapper">
-                        
-                        <input 
-                            type="email" 
-                            name="email" 
-                            placeholder="name@company.com" 
-                            onChange={handleChangeSignIn} 
-                            required 
-                            />
+                ) } 
+        {step=== 3 && (
+                <div className="form-container signin-mode">
+                    <div className="form-header">
+                        <h2>Welcome Back!</h2>
+                        <p>Glad to see you again. Please log in to your account.</p>
                     </div>
-                </div>
 
-            {/* Password Input */}
-            <div className="input-group-modern">
-                <div className="label-row">
-                    <label>Password</label>
-                    <Link to="/forgot" className="forgot-link">Forgot password?</Link>
-                </div>
-                <div className="input-wrapper">
-                    
-                    <input 
-                        type={showPassword ? "text" : "password"} 
-                        name="password" 
-                        placeholder="••••••••" 
-                        onChange={handleChangeSignIn} 
-                        required 
-                    />
-                    <button 
-                        type="button" 
-                        className="eye-btn" 
-                        onClick={() => setShowPassword(!showPassword)}
-                    >
-                        {showPassword ? "👁️" : "🙈"}
+                    <form onSubmit={handleLogin} className="modern-form">
+                        {/* Email Input */}
+                        <div className="input-group-modern">
+                            <label>Email Address</label>
+                            <div className="input-wrapper">
+                                <input type="email" name="email" placeholder="name@company.com" onChange={handleChangeSignIn} required />
+                            </div>
+                        </div>
+
+                    {/* Password Input */}
+                    <div className="input-group-modern">
+                        <div className="label-row">
+                            <label>Password</label>
+                            <Link to="/forgot" className="forgot-link">Forgot password?</Link>
+                        </div>
+                        <div className="input-wrapper">
+                            
+                            <input 
+                                type={showPassword ? "text" : "password"} 
+                                name="password" 
+                                placeholder="••••••••" 
+                                onChange={handleChangeSignIn} 
+                                required 
+                            />
+                            <button type="button" className="eye-btn" onClick={() => setShowPassword(!showPassword)}>{showPassword ? "👁️" : "🙈"}</button>
+                        </div>
+                    </div>
+
+                    {/* Remember Me */}
+                    <div className="form-options">
+                        <label className="checkbox-container">
+                            <input 
+                                type="checkbox" 
+                                checked={rememberMe} 
+                                onChange={() => setRememberMe(!rememberMe)} 
+                            />
+                            <span className="checkmark"></span>
+                            Keep me logged in
+                        </label>
+                    </div>
+
+                    <button type="submit" className="submit-botona" disabled={loading}>
+                        {loading ? <div className="spinner"></div> : "Sign In to Dashboard"}
                     </button>
-                </div>
-            </div>
 
-            {/* Remember Me */}
-            <div className="form-options">
-                <label className="checkbox-container">
-                    <input 
-                        type="checkbox" 
-                        checked={rememberMe} 
-                        onChange={() => setRememberMe(!rememberMe)} 
-                    />
-                    <span className="checkmark"></span>
-                    Keep me logged in
-                </label>
-            </div>
+                    {/* Social Auth Section */}
+                    <div className="social-separator">
+                        <span>Or continue with</span>
+                    </div>
 
-            <button type="submit" className="submit-botona" disabled={loading}>
-                {loading ? <div className="spinner"></div> : "Sign In to Dashboard"}
-            </button>
+                    <div className="social-btns-row">
+                        <button type="button" className="social-btn google">
+                            <img src="/icons/google.svg" alt="" /> Google
+                        </button>
+                        <button type="button" className="social-btn linkedin">
+                            <img src="/icons/linkedin.svg" alt="" /> LinkedIn
+                        </button>
+                    </div>
 
-            {/* Social Auth Section */}
-            <div className="social-separator">
-                <span>Or continue with</span>
+                    <div className="toggle-auth">
+                        <span>Don't have an account? </span>
+                        <button type="button" className="link-btn" onClick={() => setStep(1)}>
+                            Create free account
+                        </button>
+                    </div>
+                </form>
             </div>
+                )};
+        {step===2 && (
+            <div className="form-side">
+              <table>
+                <tr>
+                  <td><h1>Créer un Fort Mote de Passe :</h1></td>
+                </tr>
+                <tr>
+                  <td>
+                    <label >
+                        Password :<br /><input type="text" name='password1'/>
+                    </label></td>
+                </tr>
+                <tr>
+                  <td>
+                    <label >Repeat Password :<br />
+                      <input type="text" name='password2' />
+                    </label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div className="terms-row">
+                      <label className="checkbox-container">
+                        <input type="checkbox" required />
+                        <span className="checkmark"></span>
+                        I agree with <Link to="/terms">Terms & Conditions</Link>
+                      </label>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <button>Create account!!</button>
+                  </td>
+                </tr>
+              </table>
+              
+           
+            </div>
+        )}
 
-            <div className="social-btns-row">
-                <button type="button" className="social-btn google">
-                    <img src="/icons/google.svg" alt="" /> Google
-                </button>
-                <button type="button" className="social-btn linkedin">
-                    <img src="/icons/linkedin.svg" alt="" /> LinkedIn
-                </button>
-            </div>
-
-            <div className="toggle-auth">
-                <span>Don't have an account? </span>
-                <button type="button" className="link-btn" onClick={() => setIsSignUp(true)}>
-                    Create free account
-                </button>
-            </div>
-        </form>
-    </div>
-                )}
             </div>
         </div>
     );

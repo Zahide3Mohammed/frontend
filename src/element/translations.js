@@ -1,18 +1,33 @@
 export const translations = {
   en: {
-    loginlisr1 :"Welcome to the futur .",
+    loginlisr1 :"Welcome to the futur .",faqqs:"Do you have any questions?",
     loginlisr2:"Welcome Back.",
     loginlisr3 :"Build your professional profile in seconds.",
     loginlisr4:"Connect to manage your profile.",
     loguplimn1:"Create an account",
     loguplimn2:"Enter your details to get started.",
+    gt1:"F",gt2:"A",gt3:"Q",gt4:"requently",gt5:"sked ",gt6:"uestions",
     home: "Home",
     Login: "Login",
     signup: "Sign up",
     faq: "Frequently Asked Questions",
     start:"Start Now",
     tarhib1:"One platform. One identity",
-    tarhib2:"Where every profile tells a story."
+    tarhib2:"Where every profile tells a story.",
+    card1:"HallaMaghreb offers every user the opportunity to discover the true facets of Morocco, from its historic cities to its local customs, while sharing their experiences. The project aims to enrich the cultural experience in a fun and interactive way. The platform facilitates the creation of new connections through the sharing of opinions and a variety of activities, whether sporting, cultural, or leisure-related. Each user can thus find people who share the same interests and aspirations. With HallaMaghreb, users can suggest and share activities, either within groups or publicly for other visitors, making the travel experience more dynamic and enjoyable.",
+    card1t:"Our Goal",
+    q1: "What is HallaMaghreb ?",
+    a1: "HallaMaghreb is a social platform designed to connect visitors and locals in Morocco during major events such as AFCON 2025 and the FIFA World Cup 2030, by forming small groups based on shared interests and activities.",
+    q2: "How are groups created ?",
+    a2: "Groups are formed using basic information provided during onboarding, such as interests, travel style, and preferred activities. A smart matching system helps create balanced and compatible groups.",
+    q3: "Is the platform safe ?",
+    a3: "Yes. Safety is a top priority. Every user creates a profile, and the platform includes reporting and moderation features to ensure a respectful and secure environment.",
+    q4: "Who suggests the activities ?",
+    a4: "Activities can be suggested by users themselves, as well as by the platform through intelligent recommendations based on group preferences and location.",
+    q5: "Is HallaMaghreb free to use ?",
+    a5: "The core features of HallaMaghreb are free to use. Some premium services or special activities may be introduced in the future, always on an optional basis.",
+    q6: "What makes HallaMaghreb different from other platforms ?",
+    a6: "HallaMaghreb focuses on real human connections: small groups, shared experiences, and meaningful interactions, all tailored specifically for major events in Morocco."
     
 
   },
@@ -21,6 +36,7 @@ export const translations = {
     loginlisr2:"Content de te revoir.",
     loginlisr3 :"Créez votre profil professionnel en quelques secondes.",
     loginlisr4:"Connectez-vous pour gérer votre profil.",
+    gt1:"Q",gt2:"F",gt3:"P",gt6:"osées",gt5:"réquemment ",gt4:"uestions",
     home: "Accueil",
     Login: "Connexion",
     signup: "Inscription",
@@ -36,10 +52,23 @@ export const translations = {
     card2t:"Notre Vision",
     card1:"HallaMaghreb offre à chaque utilisateur l'opportunité de découvrir les véritables facettes du Maroc, de ses villes historiques à ses coutumes locales, tout en partageant ses expériences. Le projet vise à enrichir l'expérience culturelle de manière ludique et interactive. La plateforme facilite la création de nouveaux liens grâce au partage d'opinions et d'activités variées, qu'elles soient sportives, culturelles ou de loisirs. Chaque utilisateur peut ainsi trouver des personnes partageant les mêmes centres d'intérêt et aspirations. Avec HallaMaghreb, les utilisateurs peuvent suggérer et partager des activités, au sein de groupes ou publiquement pour les visiteurs, rendant ainsi l'expérience de voyage plus dynamique et agréable.",
     card1t:"Notre objectif ",
+    faqqs:"Avez-vous des questions ?",
+    q1: "Qu'est-ce que HallaMaghreb ?",
+    a1: "HallaMaghreb est une plateforme sociale conçue pour connecter les visiteurs et les habitants du Maroc lors d'événements majeurs tels que la CAN 2025 et la Coupe du Monde 2030, en formant de petits groupes basés sur des intérêts et activités communs.",
+    q2: "Comment sont créés les groupes ?",
+    a2: "Les groupes sont formés à partir des informations de base fournies lors de l'inscription, comme les intérêts, le style de voyage et les activités préférées. Un système de correspondance intelligent aide à créer des groupes équilibrés et compatibles.",
+    q3: "La plateforme est-elle sécurisée ?",
+    a3: "Oui. La sécurité est une priorité. Chaque utilisateur crée un profil, et la plateforme comprend des fonctionnalités de signalement et de modération pour garantir un environnement respectueux et sécurisé.",
+    q4: "Qui propose les activités ?",
+    a4: "Les activités peuvent être suggérées par les utilisateurs eux-mêmes, ainsi que par la plateforme via des recommandations intelligentes basées sur les préférences et la localisation du groupe.",
+    q5: "HallaMaghreb est-il gratuit ?",
+    a5: "Les fonctionnalités principales de HallaMaghreb sont gratuites. Certains services premium ou activités spéciales peuvent être introduits à l'avenir, toujours sur une base optionnelle.",
+    q6: "Qu'est-ce qui distingue HallaMaghreb des autres plateformes ?",
+    a6: "HallaMaghreb se concentre sur de véritables connexions humaines : petits groupes, expériences partagées et interactions significatives, tous adaptés spécifiquement aux grands événements au Maroc."
 
   },
   ar: {
-    loginlisr1 :"أهلاً بكم في المستقبل",
+    loginlisr1 :"أهلاً بكم في المستقبل",faqqs:"هل لديك أي أسئلة؟",
     loginlisr2:"سعدت برؤيتك مجدداً",
     loginlisr3 :"أنشئ ملفك الشخصي الاحترافي في بضع ثوانٍ",
     loginlisr4:"قم بتسجيل الدخول لإدارة ملفك الشخصي",
@@ -60,6 +89,18 @@ export const translations = {
     card2t:"رؤيتنا",
     card1:"HallaMaghreb كيعطي فرصة لكل مستخدم باش يكتشف الجوانب الحقيقية للمغرب، من المدن التاريخية إلى العادات المحلية، مع إمكانية مشاركة تجاربه مع الآخرين. المشروع كيركّز على تعزيز التجربة الثقافية بطريقة ممتعة وتفاعلية. المنصة كتسهل بناء علاقات جديدة من خلال مشاركة الآراء والنشاطات المختلفة، سواء كانت رياضية، ثقافية، أو ترفيهية. كل مستخدم يقدر يلقى أصدقاء يشاركو نفس الاهتمامات والطموحات. من خلال HallaMaghreb، يمكن للمستخدمين اقتراح ومشاركة الأنشطة، سواء كانت داخل المجموعات أو عامة للزوار، مما يجعل تجربة السفر أكثر ديناميكية ومتعة.",
     card1t:" هدفنا",
-    
+    gt1:"الأ",gt2:"ال",gt4:"سئلة",gt5:"شائعة ",
+    q1: "ما هي HallaMaghreb ؟",
+    a1: "HallaMaghreb هي منصة اجتماعية مصممة لربط الزوار والسكان المحليين في المغرب خلال الأحداث الكبرى مثل AFCON 2025 وكأس العالم 2030، من خلال تشكيل مجموعات صغيرة بناءً على الاهتمامات والأنشطة المشتركة.",
+    q2: "كيف يتم إنشاء المجموعات؟",
+    a2: "يتم تشكيل المجموعات باستخدام المعلومات الأساسية المقدمة أثناء التسجيل، مثل الاهتمامات، أسلوب السفر، والأنشطة المفضلة. يساعد نظام التوافق الذكي على إنشاء مجموعات متوازنة ومتوافقة.",
+    q3: "هل المنصة آمنة؟",
+    a3: "نعم. السلامة أولوية قصوى. ينشئ كل مستخدم ملفًا شخصيًا، وتشمل المنصة ميزات الإبلاغ والإشراف لضمان بيئة محترمة وآمنة.",
+    q4: "من يقترح الأنشطة؟",
+    a4: "يمكن للمستخدمين اقتراح الأنشطة بأنفسهم، وكذلك تقوم المنصة بتقديم توصيات ذكية بناءً على تفضيلات المجموعة والموقع.",
+    q5: "هل HallaMaghreb مجاني؟",
+    a5: "الميزات الأساسية لمنصة HallaMaghreb مجانية. قد يتم تقديم بعض الخدمات المميزة أو الأنشطة الخاصة في المستقبل، دائمًا بشكل اختياري.",
+    q6: "ما الذي يجعل HallaMaghreb مختلفًا عن المنصات الأخرى؟",
+    a6: "تركز HallaMaghreb على العلاقات البشرية الحقيقية: مجموعات صغيرة، تجارب مشتركة، وتفاعلات ذات معنى، كلها مصممة خصيصًا للأحداث الكبرى في المغرب."
   }
 };

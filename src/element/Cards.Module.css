@@ -39,7 +39,7 @@
 }
 
 /* Gradients */
-.gradient-purple {background: linear-gradient(135deg, #ff3d3d, #ff8a00);  }
+.gradient-purple { background: url("../../public/images/wld.png") 10%,linear-gradient(135deg, #ff3d3d, #ff8a00) ;background-position: bottom right;background-size: 100% ;background-repeat: no-repeat; }
 .gradient-orange { background: linear-gradient(135deg, #2563eb, #38bdf8); }
 .gradient-blue {background: linear-gradient(135deg, #0f766e, #14b8a6);}
 .gradient-teal { background: linear-gradient(135deg, #7c3aed, #ec4899); }
